@@ -195,6 +195,9 @@ footer .footer-wrap {
     display: initial;
     height: 50rem;
   }
+  .card-frame::before {
+    display: none;
+  }  
   .card-frame .card {
     margin: 0 auto;
     width: calc(100% - 4rem);
