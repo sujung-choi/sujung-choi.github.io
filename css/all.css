@@ -50,6 +50,7 @@ footer .footer-wrap {
   position: absolute;
   width: 95vw;
   height: 60vh;
+  max-height: 45rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,10 +69,6 @@ footer .footer-wrap {
   position: relative;
   width: calc((100% - 4rem) / 4);
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   font-size: 1.8rem;
   line-height: 1.5;  
   color:#e0ded7;
@@ -175,4 +172,51 @@ footer .footer-wrap {
 }
 .portfolio-wrap .portfolio-list li:nth-child(3n) {
   border-right: none;
+}
+@media (max-width:767px) {
+  header .header-wrap {
+    padding: 2rem 0 2rem;
+  }
+  header .header-wrap h1 {
+    font-size: 3.6rem;
+  }  
+  .cons-1 {
+    height: auto;
+    margin-bottom: 2rem;
+  }  
+  .sticky {
+    position: relative;
+    top: 0;
+    height: auto;
+    display: block;
+  }
+  .card-frame {
+    position: relative;
+    display: initial;
+    height: 50rem;
+  }
+  .card-frame .card {
+    margin: 0 auto;
+    width: calc(100% - 4rem);
+    height: auto;
+    min-height: 42rem;
+    transform: none !important;    
+  }
+  .card-frame .card + .card {
+    margin-top: 1rem;
+  }  
+  .portfolio-wrap {
+    margin-bottom: 5rem;
+    border-top: none;    
+  }
+  .portfolio-wrap .portfolio-list li {
+    width: 100%; 
+    border-right: none;
+  }
+  .portfolio-wrap .portfolio-list li .tit {
+    overflow: initial;
+    white-space: normal;
+    line-height: 1.5;
+    text-overflow: initial;
+  }  
 }
