@@ -1,21 +1,178 @@
 @import url(reset.css);
 
-:root {
-  --active-color: blue;
+/* layout */
+.container {
+  background-color: #3b3a38;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header .header-wrap {
+  padding: 4rem 0 2rem;
+  background: linear-gradient(to bottom, rgba(59, 58, 56, 1) 50%, rgba(59, 58, 56, 0) 100%);
+  text-align: center;
+}
+header .header-wrap h1 {
+  display: inline-flex;
+  font-size: 4.8rem;
+  background: linear-gradient(180deg, #ffffff,#d3d3d3, #ffffff); 
+  color: transparent;
+  -webkit-background-clip: text;
+}
+footer {
+  position: sticky;
+  bottom: 0;
+  padding: 2rem;
+  background-color: #e0ded7;
+}
+footer .footer-wrap {
+  font-size:1.2rem;
+  color: #252525;
 }
 
-/* layout */
-.container {max-width: calc(100% - 6rem);margin: 0 auto;}
-header {margin-top: 2rem;}
-header h1 { font-size: 2.8rem;text-align: center;}
+/* content */
+.cons-1 {
+  width: 100%;
+  height: 300vh;
+}
+.sticky {
+  position: sticky;
+  top: 10.8rem;
+  height:calc(100vh - 5.2rem - 10.8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card-frame {
+  position: absolute;
+  width: 95vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-frame::before {
+  display: block;
+  content: 'portfolio';
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15rem;
+  color: rgba(0, 0, 0, 0.2);
+}
+.card-frame .card {
+  position: relative;
+  width: calc((100% - 4rem) / 4);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  line-height: 1.5;  
+  color:#e0ded7;
+  transform-style: preserve-3d;
+  transform: perspective(200rem) translateX(100vw) rotateY(180deg);
+}
+.card-frame .card .front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+.card-frame .card .front {  
+  background-color: #4d4d4d;
+  text-align: center;
+}
+.card-frame .card .front .img {
+  margin: 1rem auto;
+  width: 66.6%;
+  height: 20rem;
+  border-radius: .6rem;
+  overflow: hidden;
+}
+.card-frame .card .front .img img {  
+  width: 100%;
+  height: auto;
+}
+.card-frame .card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  transform: rotateY(180deg);
+  background-color: #252525;
+  color: #e0ded7
+}
+.card-frame .card .back p.txt {
+  color: #e0ded7
+}
 
-/* common */
-.tit {font-size: 1.8rem;}
-.txt {font-size: 1.4rem;}
+.port-info {
+  margin: 2rem;
+  text-align: left;
+  font-size: 1.2rem;
+}
+.port-info dt, dd {
+  padding-top: 1rem;
+  word-break: break-word;
+}
+.port-info dt {
+  position: absolute;
+  left: 2rem;
+  font-weight: 600;
+  color: #989898;
+}
+.port-info dd {
+  padding-left: 8rem;
+  color: #e5e5e5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;  
+}
+.port-info dd a{
+  color: #cec687;
+}
 
-.product-wrap {margin-top:5rem;padding-top: 1.2rem;border-top: .1rem solid #ccc;}
-.product-wrap + .product-wrap {margin-top: 2rem;}
-.product-wrap .product-list {margin-top: 1.2rem;}
-.product-wrap .product-list li {position: relative;padding-left: 1rem;}
-.product-wrap .product-list li a {display: block;font-size:1.4rem;line-height: 1.5;color: #666;}
-.product-wrap .product-list li::before{content: '-';display: inline-block;position: absolute;left: 0;top: .6rem;}
+.cons-2 {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(15rem);
+  transition: all 0.5s;
+}
+.portfolio-wrap {
+  width: calc(100% - 4rem);
+  margin: 0 auto 10rem;
+  border-top: 1px solid #595959;
+}
+.portfolio-wrap .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio-wrap .portfolio-list li {
+  position: relative;
+  width: 33.33%;
+  height: 100%;
+  border-bottom: 1px solid #595959;  
+  border-right: 1px solid #595959;
+  box-sizing: border-box;
+}
+.portfolio-wrap .portfolio-list li .tit {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  color: #94cbfe;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.portfolio-wrap .portfolio-list li .tit + .port-info {
+  margin-top: 0;
+}
+.portfolio-wrap .portfolio-list li:nth-child(3n) {
+  border-right: none;
+}
