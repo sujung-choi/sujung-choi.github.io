@@ -26,6 +26,7 @@ footer {
   bottom: 0;
   padding: 2rem;
   background-color: #e0ded7;
+  z-index: 10;
 }
 footer .footer-wrap {
   font-size:1.2rem;
@@ -243,6 +244,12 @@ footer .footer-wrap {
   }
   .card-frame .card + .card {
     margin-top: 1rem;
+  }
+  .card-frame .card .front .img {
+    margin: 1rem auto;
+    max-width: 50vw;
+    height: auto;
+    max-height: 20rem;
   }  
   .portfolio-wrap {
     margin-bottom: 5rem;
